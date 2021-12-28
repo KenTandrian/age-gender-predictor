@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/number-fact-app/static/css/main.c7260cd5.css",
-    "main.js": "/number-fact-app/static/js/main.aeef16aa.js",
-    "static/js/787.82180560.chunk.js": "/number-fact-app/static/js/787.82180560.chunk.js",
-    "index.html": "/number-fact-app/index.html",
-    "main.c7260cd5.css.map": "/number-fact-app/static/css/main.c7260cd5.css.map",
-    "main.aeef16aa.js.map": "/number-fact-app/static/js/main.aeef16aa.js.map",
-    "787.82180560.chunk.js.map": "/number-fact-app/static/js/787.82180560.chunk.js.map"
+    "main.css": "/age-gender-predictor/static/css/main.d4126619.css",
+    "main.js": "/age-gender-predictor/static/js/main.9a1055d1.js",
+    "static/js/787.ef3a4d0d.chunk.js": "/age-gender-predictor/static/js/787.ef3a4d0d.chunk.js",
+    "index.html": "/age-gender-predictor/index.html",
+    "main.d4126619.css.map": "/age-gender-predictor/static/css/main.d4126619.css.map",
+    "main.9a1055d1.js.map": "/age-gender-predictor/static/js/main.9a1055d1.js.map",
+    "787.ef3a4d0d.chunk.js.map": "/age-gender-predictor/static/js/787.ef3a4d0d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7260cd5.css",
-    "static/js/main.aeef16aa.js"
+    "static/css/main.d4126619.css",
+    "static/js/main.9a1055d1.js"
   ]
 }
