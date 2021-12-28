@@ -1,6 +1,6 @@
 {
-  "name": "number-fact-app",
-  "homepage": "http://kentandrian.github.io/number-fact-app",
+  "name": "age-gender-predictor-app",
+  "homepage": "http://kentandrian.github.io/age-gender-predictor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
