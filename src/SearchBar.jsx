@@ -8,10 +8,11 @@ const SearchBar = ( { detectEnter } ) => {
             </label>
             <input 
                 id="thenumber" 
-                type="text" 
+                type="number" 
                 placeholder="Enter a number" 
                 onKeyUp={detectEnter}
                 className="ba b--black-20 pa2 mb2 w-30"
+                min="0" max="1000"
             />
             <small id="name-desc" class="f6 black-60 db mb2">Press enter to submit.</small>
         </div>
