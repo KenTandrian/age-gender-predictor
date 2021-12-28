@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -5,7 +7,76 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.top-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  background: #e2d810;
+  height: 100vh;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.header-title {
+  font-family: 'Bungee', cursive;
+  text-align: right;
+  font-size: 5rem;
+  margin: 5px 0;
+}
+
+.header-subtitle {
+  text-align: right;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  height: 100vh;
+  justify-content: center;
+  align-items: left;
+  padding: 3rem;
+  background-color: #d9138a;
+}
+
+footer {
+  background-color: #12a4d9;
+}
+
+.footer-link {
+  color: #e2d810;
+  text-decoration: none;
+  position: relative;
+}
+
+.footer-link::after{
+  content: "";
+  position: absolute;
+  bottom: -0.2em;
+  left: 0;
+  width: 0;
+  background: #e2d810;
+  transition: width .2s ease-in-out;
+  height: 2px;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+  .top-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .top-left {
+    height: 50vh;
+  }
 }
