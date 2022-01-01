@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import NameFact from './NameFact';
-import SearchBar from "./SearchBar";
-import History from './History';
+import NameFact from '../components/NameFact';
+import SearchBar from "../components/SearchBar";
+import History from '../components/History';
 import './App.css';
 
 class App extends Component {
