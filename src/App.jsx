@@ -9,8 +9,8 @@ class App extends Component {
         super();
         this.state = {
             theName: "",
-            theAge: "",
-            theGender: "",
+            theAge: null,
+            theGender: null,
             //theHistory: []
         };
     }
@@ -18,8 +18,9 @@ class App extends Component {
     historiNama = [];
 
     // For Search Bar
-    onlyAllowChar(e) {
-        this.setState({ inputTxt: e.target.value.replace(/[^a-zA-Z ]/ig, "")});
+    onlyAllowCharAndMakeProperCase(e) {
+        this.setState({ inputTxt: e.target.value.replace(/[^a-zA-Z]/ig, "")
+            .replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})});
     }
 
     // To detect enter in Search Bar
@@ -51,8 +52,10 @@ class App extends Component {
             this.setState({theGender: genderData.gender});
             //console.log('GenderData', genderData, this.state.theGender);
 
-            this.historiNama.push({namaNya: this.state.theName, umurNya: ageData.age, jkNya: genderData.gender});
-            //console.log(this.historiNama);
+            if (genderData.gender !== null && ageData.age !== null) {
+                this.historiNama.push({namaNya: this.state.theName, umurNya: ageData.age, jkNya: genderData.gender});
+            }
+            console.log(this.historiNama);
         }
     }
 
@@ -61,11 +64,15 @@ class App extends Component {
             <div>
                 <div className="top-container">
                     <header className="tc pv3 pv4-ns top-left">
-                        <h1 className="header-title">Age & Gender Predictor</h1>
+                        <h1 className="header-title f-headline-l f1-ns">Age & Gender Predictor</h1>
                         <h2 className="header-subtitle">Type a name!</h2>
                     </header>
                     <div className="top-right">
-                        <SearchBar detectEnter={this.onKeyUp} value={this.state.inputTxt} onChange={this.onlyAllowChar.bind(this)}/>
+                        <SearchBar 
+                            detectEnter={this.onKeyUp} 
+                            value={this.state.inputTxt} 
+                            onChange={this.onlyAllowCharAndMakeProperCase.bind(this)}
+                        />
                         <NameFact nama={this.state.theName} umur={this.state.theAge} jk={this.state.theGender}/>
                     </div>
                 </div>
