@@ -11,6 +11,8 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  min-height: 560px;
+  min-width: 600px;
 }
 
 .top-left {
@@ -19,6 +21,7 @@ input::-webkit-inner-spin-button {
   flex-basis: 50%;
   background: #e2d810;
   height: 100vh;
+  min-height: 560px;
   justify-content: center;
   padding: 3rem;
 }
@@ -39,6 +42,7 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   flex-basis: 50%;
   height: 100vh;
+  min-height: 560px;
   justify-content: center;
   align-items: left;
   padding: 3rem;
