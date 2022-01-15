@@ -20,8 +20,8 @@ You can do these commands in Git Bash:\
 [![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)](https://github.com/KenTandrian?tab=repositories&language=javascript)
 [![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js)](https://github.com/KenTandrian?tab=repositories&language=javascript)
 [![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)](https://github.com/KenTandrian?tab=repositories&language=javascript)
-[![HTML5](https://img.shields.io/badge/-HTML5-black?style=flat-square&logo=html5&logoColor=white)](https://github.com/KenTandrian?tab=repositories&language=html)
-[![CSS3](https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3)](https://github.com/KenTandrian?tab=repositories&language=css)
+[![HTML5](https://img.shields.io/badge/-HTML5-black?style=flat-square&logo=html5&logoColor=orange)](https://github.com/KenTandrian?tab=repositories&language=html)
+[![CSS3](https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3&logoColor=blue)](https://github.com/KenTandrian?tab=repositories&language=css)
 
 ## Dependencies
 [![react](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react)](https://www.npmjs.com/package/react)
