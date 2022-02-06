@@ -1,9 +1,11 @@
 import React from "react";
 
+import './history-box.styles.scss';
+
 const HistoryBox = ( { namaNya, umurNya, jkNya } ) => {
     return (
         <div className='mw5 bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh3 w-25'>
-            <h3 className='f3 mb2 mv2'>{namaNya}</h3>
+            <h3 className='f3 mb2 mv2 nama'>{namaNya}</h3>
             <div className='flex justify-between'>
                 <p className='f5 fw4 gray mv2'>Age: </p>
                 <p className='f5 fw4 black mv2'>{umurNya}</p>

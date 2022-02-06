@@ -1,95 +1,115 @@
-import React, { Component } from "react";
-import NameFact from '../components/NameFact';
+import React, { useEffect, useState } from "react";
+import NameFact from '../components/name-fact/name-fact.component';
 import SearchBar from "../components/SearchBar";
 import History from '../components/History';
+import HistoryContext from "../context/history/history.context";
+
 import './App.css';
 
-class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            theName: "",
-            theAge: null,
-            theGender: null,
-            //theHistory: []
-        };
-    }
-
-    historiNama = [];
+const App = () => {
+    const [ theName, setName ] = useState('');
+    const [ theAge, setAge ] = useState(null);
+    const [ theGender, setGender ] = useState(null);
+    const [ history, setHistory ] = useState([]);
+    const [ inputTxt, setInput ] = useState('');
+    const [ isLoading, setLoading ] = useState(false);
 
     // For Search Bar
-    onlyAllowCharAndMakeProperCase(e) {
-        this.setState({ inputTxt: e.target.value.replace(/[^a-zA-Z]/ig, "")
-            .replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})});
+    const onlyAllowCharAndMakeProperCase = (e) => {
+        setInput(
+            e.target.value.replace(/[^a-zA-Z]/ig, "")
+            .replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})
+        );
     }
 
     // To detect enter in Search Bar
-    onKeyUp = (event) => {
+    const onKeyUp = (event) => {
         if(event.keyCode === 13 && event.target.value !== ""){
             const nama = event.target.value;
-            //console.log("nama", nama);
-            // Because setState is async
-            this.setState({ theName: nama }, () => {
-                //console.log("thename", this.state.theName);
-                this.componentDidMount();
-                event.target.value = "";
-            });       
+            // console.log("nama", nama);
+            setLoading(true);
+            setName(nama);
+            setInput("");
+            setAge(null);
+            setGender(null);    
         }
     }
     
-    componentDidMount = async () => {
-        if (this.state.theName !== ""){
-            let theAgeLink = `https://api.agify.io?name=${this.state.theName}`;
-            let theGenderLink = `https://api.genderize.io?name=${this.state.theName}`;
-
-            const resp1 = await fetch(theAgeLink);
-            const ageData = await resp1.json();
-            this.setState({theAge: ageData.age});
-            //console.log('AgeData', ageData, this.state.theAge);
-
-            const resp2 = await fetch(theGenderLink);
-            const genderData = await resp2.json();
-            this.setState({theGender: genderData.gender});
-            //console.log('GenderData', genderData, this.state.theGender);
-
-            if (genderData.gender !== null && ageData.age !== null) {
-                this.historiNama.push({namaNya: this.state.theName, umurNya: ageData.age, jkNya: genderData.gender});
+    useEffect(() => {
+        // Declare the data fetching function
+        const fetchData = async () => {
+            if (theName !== ""){
+                let theAgeLink = `https://api.agify.io?name=${theName}`;
+                let theGenderLink = `https://api.genderize.io?name=${theName}`;
+    
+                const resp1 = await fetch(theAgeLink);
+                const ageData = await resp1.json();
+                setAge(ageData.age);
+                console.log('AgeData', ageData, theAge);
+    
+                const resp2 = await fetch(theGenderLink);
+                const genderData = await resp2.json();
+                setGender(genderData.gender);
+                console.log('GenderData', genderData, theGender);
             }
-            console.log(this.historiNama);
         }
-    }
+        // Call the function
+        fetchData()
+            .catch(err => console.log(err))
+            .then(() => {
+                if(theName !== ''){
+                // Solve component not re-rendering using slice()
+                const currentHistory = history.slice();
+                const newHistory = {
+                    name: theName, 
+                    age: theAge, 
+                    gender: theGender
+                }
+                currentHistory.push(newHistory);
+                setHistory(currentHistory);
 
-    render() {
-        return (
-            <div>
-                <div className="top-container">
-                    <header className="tc pv3 pv4-ns top-left">
-                        <h1 className="header-title f-headline-l f1-ns">Age & Gender Predictor</h1>
-                        <h2 className="header-subtitle">Type a name!</h2>
-                    </header>
-                    <div className="top-right">
-                        <SearchBar 
-                            detectEnter={this.onKeyUp} 
-                            value={this.state.inputTxt} 
-                            onChange={this.onlyAllowCharAndMakeProperCase.bind(this)}
-                        />
-                        <NameFact nama={this.state.theName} umur={this.state.theAge} jk={this.state.theGender}/>
-                    </div>
-                </div>
-                <div>
-                    <History historiNama={this.historiNama}/>
-                    <footer className="code tc pa3">
-                         Made by <a className="footer-link" href="https://github.com/KenTandrian">
-                            Ken Tandrian
-                        </a> with <a className="footer-link" href="https://agify.io/">
-                            agify.io 
-                        </a> and <a className="footer-link" href="https://genderize.io/">
-                            genderize.io
-                        </a>.
-                    </footer>
+                console.log('New History', newHistory);
+                setLoading(false);
+                console.log("Modified History", history);
+            }
+            });
+    }, [theName, theAge, theGender]);
+
+    return (
+        <div>
+            <div className="top-container">
+                <header className="tc pv3 pv4-ns top-left">
+                    <h1 className="header-title f-headline-l f1-ns">Age & Gender Predictor</h1>
+                    <h2 className="header-subtitle">Type a name!</h2>
+                </header>
+                <div className="top-right">
+                    <SearchBar 
+                        detectEnter={onKeyUp} 
+                        value={inputTxt} 
+                        onChange={onlyAllowCharAndMakeProperCase.bind(this)}
+                    />
+                    {
+                        <NameFact nama={theName} umur={theAge} jk={theGender} isLoading={isLoading}/>
+                    }
+                    
                 </div>
             </div>
-        );
-    }
+            
+            <div>
+                <HistoryContext.Provider value={history}>
+                    <History />
+                </HistoryContext.Provider>
+                <footer className="code tc pa3">
+                    Made by <a className="footer-link" href="https://github.com/KenTandrian">
+                        Ken Tandrian
+                    </a> with <a className="footer-link" href="https://agify.io/">
+                        agify.io 
+                    </a> and <a className="footer-link" href="https://genderize.io/">
+                        genderize.io
+                    </a>.
+                </footer>
+            </div>
+        </div>
+    );
 }
 export default App;
