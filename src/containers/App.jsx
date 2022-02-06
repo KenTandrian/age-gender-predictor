@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NameFact from '../components/name-fact/name-fact.component';
-import SearchBar from "../components/SearchBar";
-import History from '../components/History';
+import SearchBar from "../components/search-bar/search-bar.component";
+import History from '../components/history-section/history.component';
 import HistoryContext from "../context/history/history.context";
 
 import './App.css';

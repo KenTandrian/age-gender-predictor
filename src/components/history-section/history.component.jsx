@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import HistoryContext from '../context/history/history.context';
-import HistoryBox from './history-box/history-box.component';
+import HistoryContext from '../../context/history/history.context';
+import HistoryBox from '../history-box/history-box.component';
 
 const History = () => {
     const history = useContext(HistoryContext);
