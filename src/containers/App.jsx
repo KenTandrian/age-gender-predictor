@@ -65,7 +65,7 @@ const App = () => {
                     age: theAge, 
                     gender: theGender
                 }
-                currentHistory.push(newHistory);
+                if (theAge != null && theGender != null) currentHistory.push(newHistory);
                 setHistory(currentHistory);
 
                 console.log('New History', newHistory);
@@ -73,6 +73,7 @@ const App = () => {
                 console.log("Modified History", history);
             }
             });
+    // eslint-disable-next-line
     }, [theName, theAge, theGender]);
 
     return (
