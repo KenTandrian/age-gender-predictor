@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/age-gender-predictor/static/css/main.df60babf.css",
-    "main.js": "/age-gender-predictor/static/js/main.744c3ec9.js",
-    "static/js/787.ef3a4d0d.chunk.js": "/age-gender-predictor/static/js/787.ef3a4d0d.chunk.js",
+    "main.css": "/age-gender-predictor/static/css/main.20d0884c.css",
+    "main.js": "/age-gender-predictor/static/js/main.167e7c60.js",
+    "static/js/787.26863652.chunk.js": "/age-gender-predictor/static/js/787.26863652.chunk.js",
     "index.html": "/age-gender-predictor/index.html",
-    "main.df60babf.css.map": "/age-gender-predictor/static/css/main.df60babf.css.map",
-    "main.744c3ec9.js.map": "/age-gender-predictor/static/js/main.744c3ec9.js.map",
-    "787.ef3a4d0d.chunk.js.map": "/age-gender-predictor/static/js/787.ef3a4d0d.chunk.js.map"
+    "main.20d0884c.css.map": "/age-gender-predictor/static/css/main.20d0884c.css.map",
+    "main.167e7c60.js.map": "/age-gender-predictor/static/js/main.167e7c60.js.map",
+    "787.26863652.chunk.js.map": "/age-gender-predictor/static/js/787.26863652.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df60babf.css",
-    "static/js/main.744c3ec9.js"
+    "static/css/main.20d0884c.css",
+    "static/js/main.167e7c60.js"
   ]
 }
