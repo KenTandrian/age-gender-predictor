@@ -1,6 +1,12 @@
 import React from "react";
 
-const SearchBar = ( { detectEnter, value, onChange } ) => {
+type SearchBarProps = {
+    detectEnter: (arg0: React.KeyboardEvent<HTMLInputElement>) => void,
+    value: string,
+    onChange: (arg0: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+const SearchBar = ( { detectEnter, value, onChange }: SearchBarProps) => {
     return (
         <div className="pv3">
             <label htmlFor="thenumber" className="b db mb2 f2 f-subheadline-3 pv2">

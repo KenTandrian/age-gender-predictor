@@ -2,7 +2,13 @@ import React from "react";
 
 import './history-box.styles.scss';
 
-const HistoryBox = ( { namaNya, umurNya, jkNya } ) => {
+type HistoryBoxProps = {
+    namaNya: string,
+    umurNya: number,
+    jkNya: string
+}
+
+const HistoryBox = ( { namaNya, umurNya, jkNya }: HistoryBoxProps) => {
     return (
         <div className='mw5 bg-white br3 pa3 pa4-ns mv3 ba b--black-10 mh3 w-25'>
             <h3 className='f3 mb2 mv2 nama'>{namaNya}</h3>

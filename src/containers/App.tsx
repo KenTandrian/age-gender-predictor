@@ -2,36 +2,33 @@ import React, { useEffect, useState } from "react";
 import NameFact from '../components/name-fact/name-fact.component';
 import SearchBar from "../components/search-bar/search-bar.component";
 import History from '../components/history-section/history.component';
-import HistoryContext from "../context/history/history.context";
+import HistoryContext, { HistoryCtxInterface } from "../context/history/history.context";
 
 import './App.css';
 
 const App = () => {
-    const [ theName, setName ] = useState('');
-    const [ theAge, setAge ] = useState(null);
-    const [ theGender, setGender ] = useState(null);
-    const [ history, setHistory ] = useState([]);
-    const [ inputTxt, setInput ] = useState('');
-    const [ isLoading, setLoading ] = useState(false);
+    const [ theName, setName ] = useState<string>('');
+    const [ theAge, setAge ] = useState<number>();
+    const [ history, setHistory ] = useState<Array<HistoryCtxInterface>>([]);
+    const [ theGender, setGender ] = useState<string>();
+    const [ inputTxt, setInput ] = useState<string>('');
+    const [ isLoading, setLoading ] = useState<boolean>(false);
 
     // For Search Bar
-    const onlyAllowCharAndMakeProperCase = (e) => {
+    const onlyAllowCharAndMakeProperCase = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(
-            e.target.value.replace(/[^a-zA-Z]/ig, "")
-            .replace(/\w\S*/g, (txt) => {return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})
+            e.target.value.replace(/[^a-zA-Z]/ig, "").replace(/\w\S*/g, (txt: string) => {return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()})
         );
     }
 
     // To detect enter in Search Bar
-    const onKeyUp = (event) => {
-        if(event.keyCode === 13 && event.target.value !== ""){
-            const nama = event.target.value;
-            // console.log("nama", nama);
+    const onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(event.keyCode === 13 && event.key !== ""){
             setLoading(true);
-            setName(nama);
+            setName(inputTxt);
             setInput("");
-            setAge(null);
-            setGender(null);    
+            setAge(undefined);
+            setGender(undefined);    
         }
     }
     
@@ -45,12 +42,12 @@ const App = () => {
                 const resp1 = await fetch(theAgeLink);
                 const ageData = await resp1.json();
                 setAge(ageData.age);
-                console.log('AgeData', ageData, theAge);
+                // console.log('AgeData', ageData, theAge);
     
                 const resp2 = await fetch(theGenderLink);
                 const genderData = await resp2.json();
                 setGender(genderData.gender);
-                console.log('GenderData', genderData, theGender);
+                // console.log('GenderData', genderData, theGender);
             }
         }
         // Call the function
@@ -60,24 +57,24 @@ const App = () => {
                 if(theName !== ''){
                 // Solve component not re-rendering using slice()
                 const currentHistory = history.slice();
-                const newHistory = {
+                const newHistory: HistoryCtxInterface = {
                     name: theName, 
-                    age: theAge, 
-                    gender: theGender
+                    age: theAge!, 
+                    gender: theGender!
                 }
                 if (theAge != null && theGender != null) currentHistory.push(newHistory);
                 setHistory(currentHistory);
 
-                console.log('New History', newHistory);
+                // console.log('New History', newHistory);
                 setLoading(false);
-                console.log("Modified History", history);
+                // console.log("Modified History", history);
             }
             });
     // eslint-disable-next-line
     }, [theName, theAge, theGender]);
 
     return (
-        <div>
+        <HistoryContext.Provider value={history}>
             <div className="top-container">
                 <header className="tc pv3 pv4-ns top-left">
                     <h1 className="header-title f-headline-l f1-ns">Age & Gender Predictor</h1>
@@ -89,17 +86,12 @@ const App = () => {
                         value={inputTxt} 
                         onChange={onlyAllowCharAndMakeProperCase.bind(this)}
                     />
-                    {
-                        <NameFact nama={theName} umur={theAge} jk={theGender} isLoading={isLoading}/>
-                    }
-                    
+                    { <NameFact nama={theName} umur={theAge!} jk={theGender!} isLoading={isLoading}/> }
                 </div>
             </div>
             
             <div>
-                <HistoryContext.Provider value={history}>
-                    <History />
-                </HistoryContext.Provider>
+                <History />
                 <footer className="code tc pa3">
                     Made by <a className="footer-link" href="https://github.com/KenTandrian">
                         Ken Tandrian
@@ -110,7 +102,7 @@ const App = () => {
                     </a>.
                 </footer>
             </div>
-        </div>
+        </HistoryContext.Provider>
     );
 }
 export default App;

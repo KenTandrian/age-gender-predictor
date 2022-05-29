@@ -3,7 +3,14 @@ import Spinner from "../spinner/spinner.component";
 
 import './name-fact.styles.scss';
 
-const NameFact = ({ nama, umur, jk, isLoading }) => {
+type NameFactProps = {
+    nama: string,
+    umur: number,
+    jk: string,
+    isLoading: boolean
+}
+
+const NameFact = ({ nama, umur, jk, isLoading }: NameFactProps) => {
     return (
         (nama === "") ?
         <div></div> :
