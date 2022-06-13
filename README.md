@@ -9,13 +9,6 @@
 Age Gender Predictor is a made-for-fun website made with React JS, Ageify API and Genderize API.
 This project is made as a capstone project for The Complete Web Developer 2022: Zero to Mastery Academy program, and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## For Developers who Forked this Repo
-You can do these commands in Git Bash:\
-`npm start` > Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
-`npm test`\
-`npm run build`\
-`npm run eject`
-
 ## Technologies
 [![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)](https://github.com/KenTandrian?tab=repositories&language=javascript)
 [![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js)](https://github.com/KenTandrian?tab=repositories&language=javascript)
@@ -24,8 +17,16 @@ You can do these commands in Git Bash:\
 [![CSS3](https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3&logoColor=blue)](https://github.com/KenTandrian?tab=repositories&language=css)
 
 ## Dependencies
+### Production
 [![react](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react)](https://www.npmjs.com/package/react)
+[![react-dom](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react-dom)](https://www.npmjs.com/package/react-dom)
+[![react-scripts](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react-scripts)](https://www.npmjs.com/package/react-scripts)
+[![node-sass](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/node-sass)](https://www.npmjs.com/package/node-sass)
 [![tachyons](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/tachyons)](https://www.npmjs.com/package/tachyons)
+
+### Development
+[![gh-pages](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/gh-pages)](https://www.npmjs.com/package/gh-pages)
+[![typescript](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/typescript)](https://www.npmjs.com/package/typescript)
 
 [Go to List of Dependencies](https://github.com/KenTandrian/age-gender-predictor/network/dependencies)
 
