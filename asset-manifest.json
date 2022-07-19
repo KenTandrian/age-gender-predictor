@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/age-gender-predictor/static/css/main.20d0884c.css",
+    "main.css": "/age-gender-predictor/static/css/main.b982ecc1.css",
     "main.js": "/age-gender-predictor/static/js/main.420f8ba3.js",
     "static/js/787.26863652.chunk.js": "/age-gender-predictor/static/js/787.26863652.chunk.js",
     "index.html": "/age-gender-predictor/index.html",
-    "main.20d0884c.css.map": "/age-gender-predictor/static/css/main.20d0884c.css.map",
+    "main.b982ecc1.css.map": "/age-gender-predictor/static/css/main.b982ecc1.css.map",
     "main.420f8ba3.js.map": "/age-gender-predictor/static/js/main.420f8ba3.js.map",
     "787.26863652.chunk.js.map": "/age-gender-predictor/static/js/787.26863652.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.20d0884c.css",
+    "static/css/main.b982ecc1.css",
     "static/js/main.420f8ba3.js"
   ]
 }
