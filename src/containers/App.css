@@ -73,6 +73,15 @@ footer {
   width: 100%;
 }
 
+.badge {
+  background-color: #d9138a;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: small;
+}
+
 @media screen and (max-width: 1220px) {
   .top-container {
     display: flex;

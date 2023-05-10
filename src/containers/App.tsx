@@ -5,6 +5,7 @@ import History from '../components/history-section/history.component';
 import HistoryContext, { HistoryCtxInterface } from "../context/history/history.context";
 
 import './App.css';
+import { APP_VERSION } from "../common";
 
 const App = () => {
     const [ theName, setName ] = useState<string>('');
@@ -100,6 +101,9 @@ const App = () => {
                     </a> and <a className="footer-link" href="https://genderize.io/">
                         genderize.io
                     </a>.
+                    <div className="flex justify-center">
+                        <p className="badge">v{APP_VERSION}</p>
+                    </div>
                 </footer>
             </div>
         </HistoryContext.Provider>
