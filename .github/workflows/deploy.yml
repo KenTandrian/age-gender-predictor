@@ -1,5 +1,8 @@
 name: Deploy to GitHub Pages
-on: [pull_request]
+on:
+  push:
+    branches: [$default-branch]
+  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -38,6 +41,7 @@ jobs:
           path: ./build
 
   deploy:
+    name: Deploy application to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     environment:
