@@ -1,26 +1,50 @@
 name: Deploy to GitHub Pages
 on: [pull_request]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
-    name: Deploy application with Node.js 18
+  build:
+    name: Build application with Node.js 18
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository 🛎️
+      - name: 🛎️ Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js 18
+      - name: ⚙️ Setup Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: npm
 
-      - name: Install Dependencies
+      - name: 🔧 Install Dependencies
         run: npm ci
 
-      - name: Build Application
+      - name: 🏗️ Build Application
         run: npm run build
 
-      - name: Deploy to GitHub Pages 🚀
-        run: npm run deploy
+      - name: ☁️ Upload Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
