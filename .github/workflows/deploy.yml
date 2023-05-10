@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+on: [pull_request]
+
+jobs:
+  deploy:
+    name: Deploy application with Node.js 18
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Application
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        run: npm run deploy
