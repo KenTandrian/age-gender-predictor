@@ -1,21 +1,22 @@
 name: Build Application
 on: [pull_request]
 
-env:
-  NODE_VERSION: 18.x
-
 jobs:
   build:
-    name: Build application with Node.js ${{ env.NODE_VERSION }}
+    name: Build application with Node.js ${{ matrix.node-version }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
+      - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ matrix.node-version }}
           cache: npm
 
       - name: Install Dependencies
