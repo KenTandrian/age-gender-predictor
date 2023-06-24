@@ -1,7 +1,7 @@
 {
   "name": "age-gender-predictor-app",
   "homepage": "http://kentandrian.github.io/age-gender-predictor",
-  "version": "0.3.71",
+  "version": "0.3.72",
   "private": true,
   "dependencies": {
     "@svgr/webpack": "^8.0.1",
