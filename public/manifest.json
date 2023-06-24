@@ -1,6 +1,6 @@
 {
   "short_name": "Age & Gender Predictor",
-  "name": "A React JS project to make age and gender prediction using Agify.io and Genderize.io. Only for practice use and just for fun~",
+  "name": "Age & Gender Predictor",
   "icons": [
     {
       "src": "favicon.ico",
