@@ -1,6 +1,6 @@
 {
   "name": "age-gender-predictor-app",
-  "homepage": "http://kentandrian.github.io/age-gender-predictor",
+  "homepage": "https://kentandrian.github.io/age-gender-predictor",
   "version": "0.3.72",
   "private": true,
   "dependencies": {
@@ -52,7 +52,7 @@
   },
   "overrides": {
     "react-scripts": {
-      "typescript": "$typescript"
+      "typescript": "^5.0.0"
     }
   }
 }
