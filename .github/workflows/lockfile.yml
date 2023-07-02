@@ -2,7 +2,7 @@ name: Lockfile Maintenance
 on:
   schedule:
     # Every Sunday at 00:00 UTC+7
-    - cron: "0 17 * * *"
+    - cron: "0 17 * * 6"
   workflow_dispatch:
 
 env:
@@ -57,6 +57,7 @@ jobs:
             echo "No lockfile changes detected, exiting..."
             echo "STATUS=0" >> $GITHUB_OUTPUT
           else
+            git status --porcelain
             echo "STATUS=1" >> $GITHUB_OUTPUT
           fi
 
