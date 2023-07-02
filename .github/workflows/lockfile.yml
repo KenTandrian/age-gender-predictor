@@ -43,7 +43,12 @@ jobs:
         run: npm ci --cache ${{ steps.npm-cache-dir.outputs.dir }} --prefer-offline
 
       - name: ⬆️ Update Lockfile
-        run: npm upgrade
+        run: |
+          npm upgrade
+          # Workaround for @svgr/webpack in react-scripts dependencies
+          ver=$(npm info @svgr/webpack version)
+          sed -i "s|\"@svgr/webpack\": \".*|\"@svgr/webpack\": \"^${ver}\",|" package-lock.json
+          npm i
 
       - name: 🔍 Check Lockfile Changes
         id: status
