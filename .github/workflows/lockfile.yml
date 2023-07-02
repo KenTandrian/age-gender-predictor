@@ -20,6 +20,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.REPO_TOKEN }}
 
       - name: 📁 Get NPM Cache Directory
         id: npm-cache-dir
