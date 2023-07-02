@@ -75,4 +75,5 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
           git commit -m "chore(deps): v${{ steps.bump.outputs.VERSION }} - lockfile maintenance"
+          git pull --rebase
           git push
