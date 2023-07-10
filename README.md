@@ -25,14 +25,15 @@ This project is made as a capstone project for The Complete Web Developer 2022: 
 
 [![react](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react)](https://www.npmjs.com/package/react)
 [![react-dom](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/react-dom)](https://www.npmjs.com/package/react-dom)
-[![react-scripts](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/react-scripts)](https://www.npmjs.com/package/react-scripts)
-[![node-sass](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/node-sass)](https://www.npmjs.com/package/node-sass)
 [![tachyons](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/tachyons)](https://www.npmjs.com/package/tachyons)
 
 ### Development
 
+[![@vitejs/plugin-react](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/@vitejs/plugin-react)](https://www.npmjs.com/package/@vitejs/plugin-react)
 [![gh-pages](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/gh-pages)](https://www.npmjs.com/package/gh-pages)
+[![sass](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/sass)](https://www.npmjs.com/package/sass)
 [![typescript](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/typescript)](https://www.npmjs.com/package/typescript)
+[![vite](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/vite)](https://www.npmjs.com/package/vite)
 
 [Go to List of Dependencies](https://github.com/KenTandrian/age-gender-predictor/network/dependencies)
 
