@@ -1,7 +1,7 @@
 {
   "name": "age-gender-predictor",
   "homepage": "https://kentandrian.github.io/age-gender-predictor",
-  "version": "0.4.52",
+  "version": "0.4.54",
   "private": true,
   "dependencies": {
     "lodash.memoize": "^4.1.2",
