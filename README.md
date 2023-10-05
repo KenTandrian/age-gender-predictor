@@ -9,7 +9,7 @@
 ## Introduction
 
 Age Gender Predictor is a made-for-fun website made with React JS, Ageify API and Genderize API.
-This project is made as a capstone project for The Complete Web Developer 2022: Zero to Mastery Academy program, and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is made as a capstone project for The Complete Web Developer 2022: Zero to Mastery Academy program, and was bootstrapped with [Vite](https://github.com/vitejs/vite).
 
 ## Technologies
 
@@ -37,6 +37,12 @@ This project is made as a capstone project for The Complete Web Developer 2022: 
 [![vite](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/vite)](https://www.npmjs.com/package/vite)
 
 [Go to List of Dependencies](https://github.com/KenTandrian/age-gender-predictor/network/dependencies)
+
+## Learn More
+
+You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
 
 ##
 
