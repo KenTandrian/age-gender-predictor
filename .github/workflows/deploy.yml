@@ -15,11 +15,11 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NODE_VERSION: 18.x
+  NODE_VERSION: 20.x
 
 jobs:
   build:
-    name: Build application with Node.js 18.x
+    name: Build application with Node.js 20.x
     runs-on: ubuntu-latest
 
     steps:
