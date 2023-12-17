@@ -6,7 +6,7 @@ env:
 
 jobs:
   build:
-    name: Build application with Node.js 20.x
+    name: Build application with Node.js
     runs-on: ubuntu-latest
 
     steps:
