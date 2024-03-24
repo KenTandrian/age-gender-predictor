@@ -30,7 +30,7 @@ This project is made as a capstone project for The Complete Web Developer 2022: 
 
 ### Development
 
-[![@vitejs/plugin-react](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/@vitejs/plugin-react)](https://www.npmjs.com/package/@vitejs/plugin-react)
+[![@vitejs/plugin-react-swc](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/@vitejs/plugin-react-swc)](https://www.npmjs.com/package/@vitejs/plugin-react-swc)
 [![gh-pages](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/gh-pages)](https://www.npmjs.com/package/gh-pages)
 [![sass](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/sass)](https://www.npmjs.com/package/sass)
 [![typescript](https://img.shields.io/github/package-json/dependency-version/KenTandrian/age-gender-predictor/dev/typescript)](https://www.npmjs.com/package/typescript)
